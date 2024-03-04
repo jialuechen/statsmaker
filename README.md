@@ -4,6 +4,7 @@ LLM-Based Quantitative Trading Python Library
 ## Dependency
 * ultralytics
 * ultralyticsplus
+* CuPy
 
 ## Installation
 
