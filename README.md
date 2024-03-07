@@ -1,3 +1,7 @@
+<div align=center>
+<img src="assets/LLMBroker.jpeg" width="45%" loc>
+</div>
+
 # llmbroker
 LLM-Based Quantitative Trading Python Library
 
