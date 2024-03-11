@@ -1,5 +1,5 @@
 <div align=center>
-<img src="assets/LLMBroker.jpeg" width="45%" loc>
+<img src="assets/LLMBroker.jpeg" width="180" height="150" loc>
 </div>
 
 # llmbroker
