@@ -9,9 +9,9 @@ setuptools.setup(
         "pandas==2.2.1",
         "networkx==3.2.1"
     ],
-    url='https://github.com/jialuechen/quantorch',
+    url='https://github.com/jialuechen/llmbroker',
     license='MIT',
     author='Jialue Chen',
     author_email='jialuechen@outlook.com',
-    description='A PyTorch-Based Python Library for Quantitative Finance'
+    description='LLM Based Quantitaitve Trading Python Library'
 )
