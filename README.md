@@ -3,10 +3,10 @@
 </div>
 
 # StatsMaker
-Pyro for Market Microstructure Research
+Probabilitistic Programming Language for Market Microstructure Research
 
 Built on top of Ubers’ Pyro framework to provide modeling components for market participants behavior, order book
-dynamics and market impact. Built-in implementation of time-series and statistical arbitrage models can help practitioners
+dynamics and market impact. Built-in time-series and statistical arbitrage models can help practitioners
 quickly evaluate the market elasticity and exploit the short-term inefficiencies.
 
 
