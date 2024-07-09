@@ -1,11 +1,13 @@
 <div align=center>
-<img src="assets/LLMBroker.jpeg" width="220" height="180" loc>
+<img src="assets/StatsMaker.png" width="250" height="220" loc>
 </div>
 
 # StatsMaker
-Pyro-based Market Microstructure Python Library
+Pyro for Market Microstructure Research
 
-StatsMaker builds a Numpy-based backtesting engine and employs walk forward optimization to backtest trading strategies. It comes with a factor analysis engine accelerated by GPU and a market prediction module utilizing LLM “YOLO” framework from Hugging Face to build and cache trading indicators to facilitate strategy development. The built-in LLM can automate the detection of patterns in real stock market data and provides insights for informed decision-making in self-defined strategies.
+Built on top of Ubers’ Pyro framework to provide modeling components for market participants behavior, order book
+dynamics and market impact. Built-in implementation of time-series and statistical arbitrage models can help practitioners
+quickly evaluate the market elasticity and exploit the short-term inefficiencies.
 
 
 ## Dependency
