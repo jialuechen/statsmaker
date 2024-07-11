@@ -1,7 +1,7 @@
 import setuptools
 
 setuptools.setup(
-    name='llmbroker',
+    name='statsmaker',
     version='0.1.0',
     packages=setuptools.find_packages(),
     install_requires=[
@@ -9,9 +9,9 @@ setuptools.setup(
         "pandas==2.2.1",
         "networkx==3.2.1"
     ],
-    url='https://github.com/jialuechen/llmbroker',
-    license='MIT',
+    url='https://github.com/jialuechen/statsmaker',
+    license='Apache-2.0',
     author='Jialue Chen',
     author_email='jialuechen@outlook.com',
-    description='LLM Based Quantitaitve Trading Python Library'
+    description='Probabilistic Progamming Language (PPL) for Market Microstructure Modeling'
 )
