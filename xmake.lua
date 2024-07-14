@@ -1,6 +1,6 @@
 set_xmakever("2.5.4")
 
-set_project("llmbroker")
+set_project("statsmaker")
 
 add_rules("mode.debug", "mode.release")
 if not is_plat("windows") then
@@ -21,7 +21,7 @@ end
 set_configvar("SUPPORT_TEXT_ARCHIVE", 0)
 set_configvar("SUPPORT_XML_ARCHIVE", 1)
 set_configvar("SUPPORT_BINARY_ARCHIVE", 1)
-set_configvar("llmbroker_DISABLE_ASSERT", 0)
+set_configvar("statsmaker_DISABLE_ASSERT", 0)
 
 if is_plat("windows") then
     set_warnings("all", "error")
@@ -38,7 +38,7 @@ if is_plat("windows") or (is_plat("linux", "cross") and is_arch("aarch64", "arm6
     mysql_version = "8.0.21"
 end
 
-add_repositories("project-repo llmbroker_extern_libs")
+add_repositories("project-repo statsmaker_extern_libs")
 if is_plat("windows") then
     if is_mode("release") then
         add_requires("hdf5 " .. hdf5_version)
@@ -121,11 +121,11 @@ if not is_plat("cross") and (os.host() == "linux" and is_arch("x86_64", "i386"))
     add_vectorexts("sse", "sse2", "ssse3", "avx", "avx2")
 end
 
-add_subdirs("./llmbroker_cpp/llmbroker")
-add_subdirs("./llmbroker_pywrap")
-add_subdirs("./llmbroker_cpp/unit_test")
-add_subdirs("./llmbroker_cpp/demo")
-add_subdirs("./llmbroker_cpp/llmbroker_server")
+add_subdirs("./statsmaker_cpp/statsmaker")
+add_subdirs("./statsmaker_pywrap")
+add_subdirs("./statsmaker_cpp/unit_test")
+add_subdirs("./statsmaker_cpp/demo")
+add_subdirs("./statsmaker_cpp/statsmaker_server")
 
 before_install("scripts.before_install")
 on_install("scripts.on_install")
