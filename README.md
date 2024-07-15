@@ -1,20 +1,16 @@
 <div align=center>
 <img src="assets/StatsMaker.png" width="250" height="220" loc>
 
-
 ![GitHub license](https://img.shields.io/github/license/jialuechen/statsmaker)
 ![PyPI version](https://img.shields.io/pypi/v/statsmaker)
+
+
+![PyPI downloads](https://img.shields.io/pypi/dm/statsmaker)
 ![Python versions](https://img.shields.io/pypi/pyversions/statsmaker)
 
-![GitHub issues](https://img.shields.io/github/issues/jialuechen/statsmaker)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/jialuechen/statsmaker)
-![PyPI downloads](https://img.shields.io/pypi/dm/statsmaker)
-![GitHub last commit](https://img.shields.io/github/last-commit/jialuechen/statsmaker)
 ![GitHub contributors](https://img.shields.io/github/contributors/jialuechen/statsmaker)
 ![Code coverage](https://img.shields.io/codecov/c/github/jialuechen/statsmaker)
 ![Documentation](https://img.shields.io/readthedocs/statsmaker)
-![GitHub stars](https://img.shields.io/github/stars/jialuechen/statsmaker?style=social)
-![GitHub forks](https://img.shields.io/github/forks/jialuechen/statsmaker?style=social)
 
 </div>
 
