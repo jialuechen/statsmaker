@@ -5,7 +5,7 @@ setuptools.setup(
     version='0.1.0',
     packages=setuptools.find_packages(),
     install_requires=[
-        "pytorch==2.2",
+        "pyro>=1.9.1",
         "pandas==2.2.1",
         "networkx==3.2.1"
     ],
