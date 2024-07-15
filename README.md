@@ -1,6 +1,6 @@
 <div align=center>
 <img src="assets/StatsMaker.png" width="250" height="220" loc>
-</div>
+
 
 ![GitHub license](https://img.shields.io/github/license/jialuechen/statsmaker)
 ![PyPI version](https://img.shields.io/pypi/v/statsmaker)
@@ -15,6 +15,8 @@
 ![Documentation](https://img.shields.io/readthedocs/statsmaker)
 ![GitHub stars](https://img.shields.io/github/stars/jialuechen/statsmaker?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/jialuechen/statsmaker?style=social)
+
+</div>
 
 StatsMaker is a powerful Python library designed for market microstructure modeling, statistical analysis, and trading strategy development. It combines probabilistic programming, machine learning, and financial market microstructure theory to provide a comprehensive toolkit for researchers and traders.
 
