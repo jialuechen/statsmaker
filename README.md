@@ -3,8 +3,6 @@
 
 ![GitHub license](https://img.shields.io/github/license/jialuechen/statsmaker)
 ![PyPI version](https://img.shields.io/pypi/v/statsmaker)
-
-
 ![PyPI downloads](https://img.shields.io/pypi/dm/statsmaker)
 ![Python versions](https://img.shields.io/badge/python-3.12%2B-green)
 
