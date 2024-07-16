@@ -27,7 +27,7 @@ StatsMaker is a powerful Python library designed for market microstructure model
 Install statsmaker using pip:
 
 ```bash
-pip install statsmaker
+pip install --upgrade statsmaker
 ```
 
 ## Quick Start
