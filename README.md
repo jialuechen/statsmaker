@@ -152,7 +152,7 @@ We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for deta
 
 ## License
 
-statsmaker is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for more details.
+StatsMaker is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for more details.
 
 ## Citation
 
