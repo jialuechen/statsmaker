@@ -1,5 +1,5 @@
 <div align=center>
-<img src="assets/StatsMaker.png" width="40%" loc>
+<img src="assets/StatsMaker.png" width="200" height="180" loc>
 
 ![GitHub license](https://img.shields.io/github/license/jialuechen/statsmaker)
 ![PyPI version](https://img.shields.io/pypi/v/statsmaker)
