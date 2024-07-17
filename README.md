@@ -161,7 +161,7 @@ If you use statsmaker in your research, please cite:
 ```
 @software{statsmaker2024,
   author = {Jialue Chen},
-  title = {statsmaker: A Python Library for Market Microstructure Modeling and Analysis},
+  title = {statsmaker: A Probabilisitic Programming Language for Market Microstructure Modeling and Analysis},
   year = {2024},
   url = {https://github.com/jialuechen/statsmaker},
   version = {0.1.0}
