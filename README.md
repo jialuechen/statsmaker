@@ -1,5 +1,9 @@
 <div align=center>
-<img src="assets/StatsMaker.png" width="200" height="180" loc>
+
+
+<img src="assets/img/StatsMaker.png" width="200" height="180" loc>
+
+# Statsmaker
 
 ![GitHub license](https://img.shields.io/github/license/jialuechen/statsmaker)
 ![PyPI version](https://img.shields.io/pypi/v/statsmaker)
@@ -10,7 +14,7 @@
 
 </div>
 
-StatsMaker is a powerful Python library designed for market microstructure modeling, statistical analysis, and trading strategy development. It combines probabilistic programming, machine learning, and financial market microstructure theory to provide a comprehensive toolkit for researchers and traders.
+Statsmaker is a powerful Python library designed for market microstructure modeling, statistical analysis, and trading strategy development. It combines probabilistic programming, machine learning, and financial market microstructure theory to provide a comprehensive toolkit for researchers and traders.
 
 ## Features
 
@@ -21,6 +25,7 @@ StatsMaker is a powerful Python library designed for market microstructure model
 - Portfolio optimization and execution strategy optimization
 - Machine learning and reinforcement learning integration
 - Data simulation and market replay functionality
+- Price impact models including Almgren-Chriss, Kyle, Huberman-Stanzl, Bayesian Price Impact, and Bayesian Kyle models
 
 ## Installation
 
@@ -114,64 +119,89 @@ market_data = pd.DataFrame({
 
 # Create and train the RL trader
 rl_trader = RLTrader(market_data)
-rl_trader.train(total_timesteps=10000)
+rl_trader.train(num_episodes=100)
 
-# Use the trained model to make trading decisions
-observation = [100, 1000, 0, 0, 0]  # Current price, volume, and other relevant features
-action = rl_trader.trade(observation)
-print("Recommended action:", ["Buy", "Sell", "Hold"][action])
+# Make trading decisions
+actions = rl_trader.act(market_data)
+print("Actions:", actions)
 ```
 
-### 5. Calculating Microstructure Metrics
+### 5. Price Impact Models
+
+#### Almgren-Chriss Model
 
 ```python
-from statsmaker.metrics import microstructure_metrics
-import numpy as np
-
-# Prepare sample data
-bid_prices = np.array([99.5, 99.4, 99.3, 99.2, 99.1])
-ask_prices = np.array([100.5, 100.6, 100.7, 100.8, 100.9])
-bid_sizes = np.array([100, 200, 300, 400, 500])
-ask_sizes = np.array([150, 250, 350, 450, 550])
-
-# Calculate spread and depth
-spread = microstructure_metrics.calculate_spread(bid_prices, ask_prices)
-depth = microstructure_metrics.calculate_depth(bid_sizes, ask_sizes)
-
-print(f"Average Spread: {spread}")
-print(f"Market Depth: {depth}")
+from statsmaker import StatsmakerBase, AlmgrenChrissModel
+sm = StatsmakerBase()
+sm.define_model("almgren_chriss", AlmgrenChrissModel, sigma=0.02, gamma=0.1, eta=0.01)
+impact = sm.calculate_impact("almgren_chriss", 1000, 100000)
+print("Almgren-Chriss Price Impact:", impact)
 ```
 
-## Documentation
+#### Kyle Model
 
-Detailed documentation can be found at [docs.statsmaker.io](https://docs.statsmaker.io).
+```python
+from statsmaker import StatsmakerBase, KyleModel
+sm = StatsmakerBase()
+sm.define_model("kyle", KyleModel, lambda_kyle=0.05)
+impact = sm.calculate_impact("kyle", 1000)
+print("Kyle Model Price Impact:", impact)
+```
+
+#### Huberman and Stanzl Model
+
+```python
+from statsmaker import StatsmakerBase, HubermanStanzlModel
+sm = StatsmakerBase()
+sm.define_model("huberman_stanzl", HubermanStanzlModel, kappa=0.02, psi=0.1)
+impact = sm.calculate_impact("huberman_stanzl", 1000, 100000)
+print("Huberman-Stanzl Price Impact:", impact)
+```
+
+#### Bayesian Price Impact Model
+
+```python
+from statsmaker import StatsmakerBase, BayesianPriceImpactModel
+import pyro.distributions as dist
+sm = StatsmakerBase()
+alpha_prior = dist.Normal(0.0, 1.0)
+beta_prior = dist.Normal(0.0, 1.0)
+sm.define_model("bayesian_price_impact", BayesianPriceImpactModel, alpha_prior=alpha_prior, beta_prior=beta_prior)
+order_sizes = [1000, 2000, 1500, 1200, 1800]
+market_volumes = [100000, 150000, 120000, 110000, 130000]
+price_impacts = [10, 20, 15, 12, 18]
+params = sm.fit_model("bayesian_price_impact", order_sizes, market_volumes, price_impacts, num_steps=1000)
+print("Fitted parameters (Bayesian Price Impact):", params)
+predictions = sm.calculate_impact("bayesian_price_impact", order_sizes, market_volumes)
+print("Predicted price impacts (Bayesian Price Impact):", predictions)
+```
+
+#### Bayesian Kyle Model
+
+```python
+from statsmaker import StatsmakerBase, BayesianKyleModel
+import pyro.distributions as dist
+sm = StatsmakerBase()
+lambda_prior = dist.Normal(0.0, 1.0)
+sm.define_model("bayesian_kyle", BayesianKyleModel, lambda_prior=lambda_prior)
+order_sizes_kyle = [1000, 2000, 1500, 1200, 1800]
+price_impacts_kyle = [50, 100, 75, 60, 90]
+lambda_kyle = sm.fit_model("bayesian_kyle", order_sizes_kyle, price_impacts_kyle, num_steps=1000)
+print("Fitted lambda (Bayesian Kyle):", lambda_kyle)
+predictions_kyle = sm.calculate_impact("bayesian_kyle", order_sizes_kyle)
+print("Predicted price impacts (Bayesian Kyle):", predictions_kyle)
+```
 
 ## Contributing
 
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to get started.
+We welcome contributions to `statsmaker`. If you have an idea for a new feature, a bug fix, or an improvement, please fork the repository and submit a pull request.
 
 ## License
 
-StatsMaker is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for more details.
+`statsmaker` is licensed under the Apache License, Version 2.0. See the [LICENSE](LICENSE) file for more details.
 
-## Citation
+## Acknowledgements
 
-If you use statsmaker in your research, please cite:
+This project is built on the shoulders of giants. We want to acknowledge the contributions of the open-source community, particularly the developers of Pyro and other libraries that make probabilistic programming and financial modeling accessible.
 
-```
-@software{statsmaker2024,
-  author = {Jialue Chen},
-  title = {statsmaker: A Probabilisitic Programming Language for Market Microstructure Modeling and Analysis},
-  year = {2024},
-  url = {https://github.com/jialuechen/statsmaker},
-  version = {0.1.0}
-}
-```
 
-## Contact
-
-If you have any questions or suggestions, please open an issue or contact us directly at contact@statsmaker.io.
-
-## Acknowledgments
-
-We would like to thank the Pyro team at Uber for their excellent probabilistic programming framework, which forms the foundation of many models in statsmaker.
