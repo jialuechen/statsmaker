@@ -3,7 +3,7 @@
 
 <img src="assets/img/StatsMaker.png" width="200" height="180" loc>
 
-# Statsmaker
+# Statsmaker: Probabilistic Programming Language for Market Microstructure Modeling
 
 ![GitHub license](https://img.shields.io/github/license/jialuechen/statsmaker)
 ![PyPI version](https://img.shields.io/pypi/v/statsmaker)
