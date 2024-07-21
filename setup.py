@@ -2,16 +2,16 @@ import setuptools
 
 setuptools.setup(
     name='statsmaker',
-    version='0.1.0',
+    version='1.0.0',
     packages=setuptools.find_packages(),
     install_requires=[
-        "pyro>=1.9.1",
-        "pandas==2.2.1",
-        "networkx==3.2.1"
+        "pyro-ppl",
+        "torch",
     ],
     url='https://github.com/jialuechen/statsmaker',
     license='Apache-2.0',
     author='Jialue Chen',
     author_email='jialuechen@outlook.com',
-    description='Probabilistic Progamming Language (PPL) for Market Microstructure Modeling'
+    description='Probabilistic Progamming Language (PPL) for Market Microstructure Modeling',
+    python_requires=">=3.6"
 )
